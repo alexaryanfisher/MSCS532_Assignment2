@@ -9,7 +9,7 @@ import random
 import tracemalloc  # For memory usage tracking
 import sys # Needed for recursion limit adjustment
 
-sys.setrecursionlimit(2000000)  # Increase recursion limit for large arrays
+sys.setrecursionlimit(1000000)  # Increase recursion limit for large arrays
 
 # Quick Sort function
 def quick_sort(arr):
@@ -27,7 +27,11 @@ def _quick_sort_helper(arr, low, high):
         _quick_sort_helper(arr, pi + 1, high)
 
 def partition(arr, low, high):
-    # Choose the last element as pivot
+    # Choose random pivot element
+    random_pivot_index = random.randint(low, high)
+    arr[random_pivot_index], arr[high] = arr[high], arr[random_pivot_index]
+
+    #Set to random pivot element
     pivot = arr[high]
     i = (low - 1)  # Pointer for the smaller element
 
