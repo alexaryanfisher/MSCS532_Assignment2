@@ -6,6 +6,7 @@ This implementation is to provide a performance comparison between Merge and Qui
 
 import time
 import random
+import tracemalloc # For memory usage tracking
 
 # Merge Sort function
 def merge_sort(arr):
@@ -52,18 +53,26 @@ def merge(left, right):
     return merged_arr
 
 """ Use Cases for Merge Sort 
-Includes Execution Time Measurement and Prints Results"""
+Includes Execution Time Measurement, Memory usage, and Prints Results"""
 
 def test_case_run(name, data):
+    print(f"Running Test Case: {name}")
+    print(f"Data Size: {len(data)} elements")
+
+    tracemalloc.start()  # Start memory tracking.
     start_time = time.perf_counter()
     sorted_data = merge_sort(list(data))
     end_time = time.perf_counter()
 
+    current, peak = tracemalloc.get_traced_memory()  # Get current and peak memory usage.
+    tracemalloc.stop()  # Stop memory tracking.
+    
     execution_time_ms = end_time - start_time * 1000  # Convert to milliseconds
 
     print(f"Sorted Data (first 12 elements): {sorted_data[:12]}... (Total: {len(sorted_data)} elements)") # Display first 12 elements of sorted data and total count.
     print(f"Execution Time: {execution_time_ms:.4f} ms")
-    print(f"Is Sorted: {sorted_data == sorted(data)}\n") # Verify if the data is sorted.
+    print(f"Memory Usage: Current = {current / (1024 * 10124):.4f} MB, Peak = {peak / (1024 * 1024):.4f} MB\n")  # Display memory usage in MB.
+    print(f"Is Sorted?: {sorted_data == sorted(data)}\n") # Verify if the data is sorted.
 
 # Use Cases
 
