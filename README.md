@@ -1,5 +1,5 @@
 ## Merge and Quick Sort Implementations
-This is a repository that contains my second assignment for MSCS532. This is a Python implementation of the Merge Sort and Quick Sort algorithms. The algorithm was utilized to sort a list of numbers using the divide-and-conquer paradigm. It also includes test cases to demonstrate their performance (execution time and memory usage) on various types of datasets.
+This is a repository that contains my second assignment for MSCS532. This is a Python implementation of the Merge Sort and Quick Sort algorithms. The algorithm was utilized to sort a list of numbers using the divide and conquer paradigm.
 
 ## Project Overview
 This section of the project focuses on the practical implementation and comparison of the two divide-and-conquer sorting algorithms: Merge Sort and Quick Sort. The primary objective is to bridge the gap between theoretical algorithmic complexity and real-world performance.
