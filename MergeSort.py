@@ -74,11 +74,11 @@ def test_case_run(name, data):
     print(f"Memory Usage: Current = {current / (1024 * 10124):.4f} MB, Peak = {peak / (1024 * 1024):.4f} MB\n")  # Display memory usage in MB.
     print(f"Is Sorted?: {sort_data == sorted(data)}\n") # Verify if the data is sorted.
 
-# Use Cases
+# Use Cases for Merge Sort.
 
 if __name__ == "__main__":
 
-    DATA_SIZE = 250000  # Size of the dataset, picked a large number for performance testing.
+    DATA_SIZE = 100000  # Size of the dataset, picked a large number for performance testing.
 
     # Use Case: Sorted Data
     sorted_data = list(range(DATA_SIZE))
