@@ -61,7 +61,7 @@ def test_case_run(name, data):
 
     tracemalloc.start()  # Start memory tracking.
     start_time = time.perf_counter()
-    sorted_data = merge_sort(list(data))
+    sort_data = merge_sort(list(data))
     end_time = time.perf_counter()
 
     current, peak = tracemalloc.get_traced_memory()  # Get current and peak memory usage.
@@ -69,16 +69,16 @@ def test_case_run(name, data):
     
     execution_time_ms = end_time - start_time * 1000  # Convert to milliseconds
 
-    print(f"Sorted Data (first 12 elements): {sorted_data[:12]}... (Total: {len(sorted_data)} elements)") # Display first 12 elements of sorted data and total count.
+    print(f"Sorted Data (first 12 elements): {sort_data[:12]}... (Total: {len(sort_data)} elements)") # Display first 12 elements of sorted data and total count.
     print(f"Execution Time: {execution_time_ms:.4f} ms")
     print(f"Memory Usage: Current = {current / (1024 * 10124):.4f} MB, Peak = {peak / (1024 * 1024):.4f} MB\n")  # Display memory usage in MB.
-    print(f"Is Sorted?: {sorted_data == sorted(data)}\n") # Verify if the data is sorted.
+    print(f"Is Sorted?: {sort_data == sorted(data)}\n") # Verify if the data is sorted.
 
 # Use Cases
 
 if __name__ == "__main__":
 
-    DATA_SIZE = 150000  # Size of the dataset, picked a large number for performance testing.
+    DATA_SIZE = 250000  # Size of the dataset, picked a large number for performance testing.
 
     # Use Case: Sorted Data
     sorted_data = list(range(DATA_SIZE))
